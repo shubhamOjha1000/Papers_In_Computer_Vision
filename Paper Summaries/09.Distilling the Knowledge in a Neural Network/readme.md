@@ -1,0 +1,13 @@
+# Distilling the Knowledge in a Neural Network
+- <ins>Author, Venue & Year</ins>: **Geoffrey Hinton, Oriol Vinyals, Jeff Dean, NeurIPS, 2014**
+### [Original Paper](https://arxiv.org/abs/1503.02531) || [Paper Report](https://github.com/AdiNarendra98/Papers-on-Vision/blob/main/Paper%20Summaries/09.Distilling%20the%20Knowledge%20in%20a%20Neural%20Network/Distilling%20the%20knowledge%20in%20a%20neural%20network.pdf)
+
+## Summary
+
+* This paper by Hinton et al. from Google in NeurIPS 2014 introduces a very simple way to improve the performance of almost any machine learning algorithm by training many different models on the same data and then to average their predictions. Unfortunately, making predictions using a whole ensemble of models is cumbersome and may be too computationally expensive to allow deployment to a large number of users, especially if the individual models are large neural nets.
+
+* Caruana et al. have shown that it is possible to compress the knowledge in an ensemble into a single model which is much easier to deploy and the authors develop this approach further using a different compression technique. They achieve some surprising results on MNIST and show that they can significantly improve the acoustic model of a heavily used commercial system by distilling the knowledge in an ensemble of models into a single model. They also introduce a new type of ensemble composed of one or more full models and many specialist models which learn to distinguish fine-grained classes that the full models confuse. Unlike a mixture of experts, these specialist models can be trained rapidly and in parallel. This shows that distilling works very well for transferring knowledge from an ensemble or from a large highly regularized model into a smaller, distilled model.
+
+* The results show that on MNIST, distillation works remarkably well even when the transfer set that is used to train the distilled model lacks any examples of one or more of the classes. For a deep acoustic model that is version of the one used by Android voice search, they have shown that nearly all of the improvement that is achieved by training an ensemble of deep neural nets can be distilled into a single neural net of the same size which is far easier to deploy.
+
+* For really big neural networks, it can be infeasible even to train a full ensemble, but have shown that the performance of a single really big net that has been trained for a very long time can be significantly improved by learning a large number of specialist nets, each of which learns to discriminate between the classes in a highly confusable cluster.
