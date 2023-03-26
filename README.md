@@ -1,6 +1,6 @@
 # Papers on Vision
 
-- This repo was long due which consists all my **re-implementations of various papers in computer vision** that I read during the last few years.
+- This repo consists all my **re-implementations of various papers in computer vision** that I read during the last few years.
 
 - All papers follow this structure:
   * **Paper Name**
